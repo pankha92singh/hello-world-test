@@ -1,7 +1,8 @@
-# Real database password file
+# Real secret config must never go to GitHub
 config.php
 
-# Real uploaded files should stay in cPanel, not GitHub
+# Secure/private images should never go to GitHub
+private_fruit_images/
 uploads/
 
 # Backup files
