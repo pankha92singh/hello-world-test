@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/pankhac/public_html/
+    - /bin/cp index.php $DEPLOYPATH
+    - /bin/cp image.php $DEPLOYPATH
