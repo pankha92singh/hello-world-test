@@ -3,9 +3,9 @@ CREATE TABLE people (
     name VARCHAR(100) NOT NULL,
     age INT NOT NULL,
     fruit VARCHAR(100) NOT NULL,
-    image_path VARCHAR(255) NOT NULL
+    image_file VARCHAR(255) NOT NULL
 );
 
-INSERT INTO people (name, age, fruit, image_path) VALUES
-('Ram', 22, 'Apple', 'uploads/apple.svg'),
-('Shyam', 24, 'Banana', 'uploads/banana.svg');
+INSERT INTO people (name, age, fruit, image_file) VALUES
+('Ram', 22, 'Apple', 'apple.svg'),
+('Shyam', 24, 'Banana', 'banana.svg');
