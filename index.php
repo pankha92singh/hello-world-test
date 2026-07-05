@@ -1,41 +1,52 @@
 <?php
 require_once __DIR__ . '/config.php';
 
-$sql = "SELECT name, age, fruit, image_path FROM people ORDER BY id ASC";
+$sql = "SELECT id, name, age, fruit FROM people ORDER BY id ASC";
 $result = $conn->query($sql);
 
 if (!$result) {
-    die("Database error: " . $conn->error);
+    error_log("Database query failed: " . $conn->error);
+    die("Something went wrong.");
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Database and Storage Test</title>
+    <meta charset="UTF-8">
+    <title>Secure Fruit Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             font-family: Arial, sans-serif;
             background: #f5f7fb;
-            padding: 30px;
+            margin: 0;
+            padding: 20px;
         }
 
         .box {
-            max-width: 800px;
+            max-width: 850px;
             margin: auto;
             background: white;
-            padding: 25px;
+            padding: 22px;
             border-radius: 14px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
 
         h1 {
             text-align: center;
+            margin-top: 0;
+        }
+
+        p {
+            text-align: center;
+            color: #555;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 25px;
+            margin-top: 22px;
         }
 
         th, td {
@@ -54,29 +65,52 @@ if (!$result) {
             height: 90px;
             object-fit: contain;
         }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .box {
+                padding: 14px;
+            }
+
+            th, td {
+                padding: 9px;
+                font-size: 14px;
+            }
+
+            img {
+                width: 65px;
+                height: 65px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="box">
-    <h1>Database + Storage Test</h1>
-    <p>This page gets names and ages from database, and fruit images from file storage.</p>
+    <h1>Secure Fruit Website</h1>
+    <p>Names and ages come from database. Photos are served securely by PHP.</p>
 
     <table>
         <tr>
             <th>Name</th>
             <th>Age</th>
             <th>Fruit</th>
-            <th>Photo from Storage</th>
+            <th>Secure Photo</th>
         </tr>
 
         <?php while ($row = $result->fetch_assoc()): ?>
             <tr>
-                <td><?php echo htmlspecialchars($row['name']); ?></td>
-                <td><?php echo htmlspecialchars($row['age']); ?></td>
-                <td><?php echo htmlspecialchars($row['fruit']); ?></td>
+                <td><?php echo htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($row['age'], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($row['fruit'], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td>
-                    <img src="<?php echo htmlspecialchars($row['image_path']); ?>" alt="<?php echo htmlspecialchars($row['fruit']); ?>">
+                    <img 
+                        src="image.php?id=<?php echo (int)$row['id']; ?>" 
+                        alt="<?php echo htmlspecialchars($row['fruit'], ENT_QUOTES, 'UTF-8'); ?>"
+                    >
                 </td>
             </tr>
         <?php endwhile; ?>
