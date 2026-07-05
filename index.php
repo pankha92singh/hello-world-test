@@ -90,7 +90,7 @@ if (!$result) {
 <body>
 
 <div class="box">
-    <h1>Secure Fruit Website - Updated by Codex</h1>
+    <h1>Secure Fruit Website - Local Codex Test</h1>
     <p>Names and ages come from database. Photos are served securely by PHP.</p>
 
     <table>
