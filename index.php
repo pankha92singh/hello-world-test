@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/config.php';
+require_once dirname(__DIR__) . '/config.php';
 
 $sql = "SELECT id, name, age, fruit FROM people ORDER BY id ASC";
 $result = $conn->query($sql);
