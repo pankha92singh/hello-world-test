@@ -1,0 +1,16 @@
+# Real database password file
+config.php
+
+# Real uploaded files should stay in cPanel, not GitHub
+uploads/
+
+# Backup files
+*.zip
+*.tar
+*.gz
+*.backup
+*.bak
+
+# System files
+.DS_Store
+Thumbs.db
