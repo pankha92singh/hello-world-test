@@ -13,7 +13,7 @@ if (!$result) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Secure Fruit Website</title>
+    <title>Secure Fruit Website - Updated by Codex</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -90,7 +90,7 @@ if (!$result) {
 <body>
 
 <div class="box">
-    <h1>Secure Fruit Website</h1>
+    <h1>Secure Fruit Website - Updated by Codex</h1>
     <p>Names and ages come from database. Photos are served securely by PHP.</p>
 
     <table>
