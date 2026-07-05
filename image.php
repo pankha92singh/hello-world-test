@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/config.php';
+require_once dirname(__DIR__) . '/config.php';
 
 if (!isset($_GET['id']) || !ctype_digit($_GET['id'])) {
     http_response_code(400);
