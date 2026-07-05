@@ -8,4 +8,5 @@ CREATE TABLE people (
 
 INSERT INTO people (name, age, fruit, image_file) VALUES
 ('Ram', 22, 'Apple', 'apple.svg'),
-('Shyam', 24, 'Banana', 'banana.svg');
+('Shyam', 24, 'Banana', 'banana.svg'),
+('Sita', 23, 'Apple', 'apple.png');
